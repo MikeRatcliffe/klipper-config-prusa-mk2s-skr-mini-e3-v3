@@ -6,7 +6,7 @@ Klipper config files for the Prusa MK2 family running on a BigTreeTech SKR Mini 
 
 * **PINDA 2 thermistor support.** The `temperature_sensor pinda` section reads the built-in thermistor on analog pin PA1 so Klipper can account for probe temperature drift. The value is exposed on the status screen and can be queried from the console using standard temperature commands.
 * **`PINDA_PREHEAT` macro.** Use `PINDA_PREHEAT` before a mesh or first-layer calibration to warm the bed and wait until the probe temperature is stable (default 35 °C). Optional parameters allow you to override the bed (`B`), nozzle (`S` or `NOZZLE`), target (`T`), and hysteresis (`H`) values.
-* **Bed mesh leveling.** The included `G80`/`G81` macros provide the MK2.5-style mesh leveling workflow that supersedes the retired XYZ calibration from the original MK2 firmware.
+* **Bed mesh leveling.** The included `G80`/`G81` macros provide the MK2.5S-style mesh leveling workflow that supersedes the retired XYZ calibration from the original MK2 firmware.
 * **Live Adjust Z during a print.** The LCD `Live adjust Z` entry now proxies Prusa's firmware behaviour by driving a dedicated `LIVE_Z` macro. Adjustments immediately move the nozzle, are compatible with `M290` commands from OctoPrint or slicer start G-code, and persist until you either apply them to the probe with `Z_OFFSET_APPLY_PROBE` or reset them with `LIVE_Z RESET=1` (invoked automatically on `CANCEL_PRINT`).
 * **12 V E3D Revo hotend ready.** The stock extruder configuration now targets the Semitec 104NT thermistor bundled with the Revo heater assembly, so temperatures and safety checks line up with the drop-in 0.4 mm Revo upgrade. Run a PID tune after installation to dial in your specific heater cartridge.
 
